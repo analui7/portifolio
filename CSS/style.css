@@ -310,7 +310,7 @@ body {
     padding: 10px 20px;
     border-radius: 14px;
     text-align: center;
-    min-width: 160px;
+    min-width: 120px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
@@ -376,6 +376,13 @@ body {
         max-width: 340px;
         margin: 0 auto 20px;
         text-align: center;
+    }
+    .cardsobreum{
+        max-width: 250px;
+        display: flex;
+    }
+    .cardsobre{
+        width: 30px;
     }
 }
 
