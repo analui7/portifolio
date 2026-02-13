@@ -51,6 +51,7 @@ body {
 }
 
 
+
 .buttons {
     display: flex;
     gap: 16px;
@@ -118,41 +119,45 @@ body {
 .imagemAna {
     width: 650px;
     max-width: 100%;
+        border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease;
 }
+
+
 
 @media (max-width: 768px) {
     .primeiraparte {
         flex-direction: column;
-        /* Coloca a imagem e o texto um abaixo do outro */
         padding: 40px 20px;
         text-align: center;
-        /* Centraliza o texto */
+         display: flex;
+    }
+    .imagemInicio {
+        order: -1; /* sobe a imagem */
+        margin-bottom: 25px;
     }
 
     .textoInicio h1 {
         font-size: 36px;
-        /* Tamanho menor do título */
     }
 
     .textoInicio h2 {
         font-size: 24px;
-        /* Tamanho menor do subtítulo */
     }
 
     .textoInicio p {
         font-size: 14px;
-        /* Tamanho menor do parágrafo */
         line-height: 1.5;
-        /* Aumenta o espaçamento das linhas */
+        text-align: justify;
+        max-width: 100%;
     }
 
     .imagemAna {
         width: 80%;
-        /* A imagem ocupa mais espaço em telas pequenas */
         margin-top: 20px;
-        /* Adiciona um espaço entre o texto e a imagem */
     }
-
+    
     .buttons {
         flex-direction: column;
         gap: 12px;
@@ -160,7 +165,6 @@ body {
 
     .btn {
         padding: 10px 24px;
-        /* Botões menores */
     }
 }
 
@@ -197,57 +201,78 @@ body {
 
 /* Responsividade para os botões */
 @media (max-width: 768px) {
+   .primeiraparte {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .textoInicio {
+        padding-right: 0;
+    }
+
+    .textoInicio h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .textoInicio h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .textoInicio p {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: center; /* tira o justify */
+        max-width: 320px;
+        margin: 0 auto;
+         color: #4b5563;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 14px;
+        margin-top: 15px;
+    }
+
     .btn {
-        padding: 14px 30px;
-        font-size: 18px;
-    }
-
-    .btn-primary {
         width: 100%;
-        /* Os botões ocupam toda a largura na tela pequena */
+        padding: 14px;
+        font-size: 16px;
     }
 
-    .btn-outline {
-        width: 100%;
+    .imagemSobre{
+        max-width: 100%;
     }
-
-    .primeiraparte {
-        padding: 20px 50px;
-    }
-
     .imagemAna {
-        width: 250px;
-        /* A imagem fica um pouco menor em tablets */
-    }
+        width: 420px;
+        margin-top: 10px;
+        
+}
 }
 
 
-.segundaparte {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 200px;
-    gap: 60px;
-    background-color: #fff;
-}
+
 
 /* ====== IMAGEM ====== */
 .imagemSobre img {
-    width: 420px;
+    width: 520px;
     border-radius: 18px;
-    object-fit: cover;
+    object-fit: cover; 
+    
+    padding: 90px 50% ;
 }
-
-/* ====== TEXTO ====== */
-
-.segundaparte {
+.segundaparte{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 60px 200px;
-    flex-wrap: wrap;
+    gap: 20%;
+    background-color: white;
+    
 }
-
 .textoSobre {
     line-height: 1.8;
     flex: 1;
@@ -258,19 +283,21 @@ body {
     color: rgb(10, 10, 56);
     font-family: "Poppins", sans-serif;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 52px;
+     letter-spacing: -1px;
 }
+
+
+
 
 .textoSobre p {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
+    max-width: 600px;
 }
 
-
-
-/* ====== CARDS ====== */
 .cardsobreum {
     display: flex;
     gap: 10px;
@@ -287,10 +314,14 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
+.cardsobre:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(168,85,247,0.2);
+}
 
 .cardsobre h3 {
-    font-size: 28px;
-    font-weight: 600;
+   font-size: 34px;
+    font-weight:700;
     color: #a100ff;
     margin-bottom: 6px;
     font-family: "Poppins", sans-serif;
@@ -309,6 +340,7 @@ body {
 @media (max-width: 1024px) {
     .segundaparte {
         padding: 60px 80px;
+        background-color: white;
     }
 
     .imagemSobre img {
@@ -318,32 +350,32 @@ body {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .segundaparte {
+   .segundaparte {
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 60px 24px;
         text-align: center;
+        gap: 30px;
+        background-color: white;
+        max-width: 100%;
     }
-
-    .imagemSobre img {
-        width: 100%;
-        max-width: 320px;
+.imagemSobre img{
+    padding: 0;
+}
+    .textoSobre {
+        padding-right: 0;
     }
 
     .textoSobre h1 {
-        font-size: 36px;
+        font-size: 32px;
+        letter-spacing: -1px;
     }
 
     .textoSobre p {
         font-size: 15px;
-    }
-
-    .cardsobre {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cardsobre {
-        min-width: 140px;
+        line-height: 1.8;
+        max-width: 340px;
+        margin: 0 auto 20px;
+        text-align: center;
     }
 }
 
@@ -657,9 +689,9 @@ body {
 }
 
 .conteudo-texto h1 {
-    color: rgb(10, 10, 56);
+   /* color: rgb(10, 10, 56);*/
+   color: white;
     font-family: "Poppins", sans-serif;
-    font-weight: 800;
     font-size: 50px;
 }
 
@@ -780,6 +812,7 @@ body {
         /* Centraliza o texto no celular */
     }
 
+    
     .container-cinco,
     .footer-grid {
         flex-direction: column;
@@ -808,7 +841,11 @@ body {
     }
 
 .conteudo-texto h1{
-    font-size: 25px;
+    font-size: 26px;
+      line-height: 1.2;
+    letter-spacing: -1px;
+    max-width: 700px;
+    margin: 0 auto 20px;
 }
     .footer-grid {
         flex-direction: column;
